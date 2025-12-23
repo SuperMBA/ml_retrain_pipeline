@@ -1,0 +1,26 @@
+[2025-12-23T23:10:51.848+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-23T23:10:51.887+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_retrain_pipeline.evaluate_model manual__2025-12-23T23:10:50.549818+00:00 [queued]>
+[2025-12-23T23:10:51.901+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_retrain_pipeline.evaluate_model manual__2025-12-23T23:10:50.549818+00:00 [queued]>
+[2025-12-23T23:10:51.902+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-23T23:10:51.920+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): evaluate_model> on 2025-12-23 23:10:50.549818+00:00
+[2025-12-23T23:10:51.930+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_retrain_pipeline', 'evaluate_model', 'manual__2025-12-23T23:10:50.549818+00:00', '--job-id', '43', '--raw', '--subdir', 'DAGS_FOLDER/ml_retrain_pipeline.py', '--cfg-path', '/tmp/tmpnxwe14w_']
+[2025-12-23T23:10:51.934+0000] {standard_task_runner.py:91} INFO - Job 43: Subtask evaluate_model
+[2025-12-23T23:10:51.934+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=171) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-23T23:10:51.936+0000] {standard_task_runner.py:64} INFO - Started process 172 to run task
+[2025-12-23T23:10:52.004+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_retrain_pipeline.evaluate_model manual__2025-12-23T23:10:50.549818+00:00 [running]> on host ***-scheduler
+[2025-12-23T23:10:52.107+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ml_retrain_pipeline' AIRFLOW_CTX_TASK_ID='evaluate_model' AIRFLOW_CTX_EXECUTION_DATE='2025-12-23T23:10:50.549818+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-23T23:10:50.549818+00:00'
+[2025-12-23T23:10:52.108+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-23T23:10:52.120+0000] {logging_mixin.py:188} INFO - Оценка модели завершена:
+[2025-12-23T23:10:52.121+0000] {logging_mixin.py:188} INFO - {
+  "model_version": "v2.3.1",
+  "metric_name": "quality_score",
+  "metric_value": 0.85,
+  "threshold": 0.8,
+  "passed": true
+}
+[2025-12-23T23:10:52.137+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-12-23T23:10:52.138+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-23T23:10:52.148+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ml_retrain_pipeline, task_id=evaluate_model, run_id=manual__2025-12-23T23:10:50.549818+00:00, execution_date=20251223T231050, start_date=20251223T231051, end_date=20251223T231052
+[2025-12-23T23:10:52.192+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-23T23:10:52.220+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-23T23:10:52.222+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
